@@ -8,6 +8,8 @@ import MongoStore from "connect-mongo";
 import { status } from "./sessions/check_status.js";
 import { view_audits } from "./actions/view_audit.js";
 import create_item from "./actions/create_item.js";
+import create_order from "./actions/orders/create_order.js";
+import approve_order from "./actions/orders/approve_order.js";
 const app=express();
 
 const config={
@@ -31,4 +33,6 @@ app.post("/new/login",new_login);
 app.get("/status",status);
 app.get("/view_audits",view_audits);
 app.post("/create_item",create_item);
+app.post("/create_order",create_order);
+app.post("/approve_order",approve_order);
 export default app;
