@@ -1,8 +1,8 @@
 services: 
  docker_cont1:
-  image : system_admin,
+  image : system_admin
   container_name : docker_cont1
-  network: 
+  networks: 
    - dock_net
   ports:
    - "100:3001" 
