@@ -6,6 +6,8 @@ import { login } from "./actions.js";
 import { Register } from "./actions/register.js";
 import MongoStore from "connect-mongo";
 import { status } from "./sessions/check_status.js";
+import { view_audits } from "./actions/view_audit.js";
+import create_item from "./actions/create_item.js";
 const app=express();
 
 const config={
@@ -27,4 +29,6 @@ app.post("/log",login);
 app.post("/reg",Register);
 app.post("/new/login",new_login);
 app.get("/status",status);
+app.get("/view_audits",view_audits);
+app.post("/create_item",create_item);
 export default app;

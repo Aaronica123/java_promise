@@ -4,7 +4,8 @@ export const roles={
     IT_handler:"IT_handler",
     Investor:"Investor",
     Security:"Security",
-    Registry:"Registry"
+    Registry:"Registry",
+    Vendor:"Vendor"
 }
 const User=mongoose.Schema({
     user_id:{
