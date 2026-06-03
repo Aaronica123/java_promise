@@ -1,0 +1,21 @@
+services: 
+ docker_cont1:
+  image : system_admin,
+  container_name : docker_cont1
+  network: 
+   - dock_net
+  ports:
+   - "100:3001" 
+  env_file : 
+  - .env
+
+ 
+
+networks:
+  dock_net:
+     driver : bridge
+   
+
+
+
+  
