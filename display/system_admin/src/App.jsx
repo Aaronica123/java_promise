@@ -2,6 +2,7 @@ import './App.css'
 import Success_alert from './notifications/success.jsx';
 import Error from './notifications/error.jsx';
 import Logout from './notifications/logout.jsx';
+import Sidebar from './sidebar/sidebar.jsx';
 
 function App() {
 
@@ -10,7 +11,8 @@ function App() {
     <>
     {/* <Success_alert /> */}
     {/* <Error/> */}
-    <Logout/>
+    {/* <Logout/> */}
+    <Sidebar/>
     </>
   )
 }
