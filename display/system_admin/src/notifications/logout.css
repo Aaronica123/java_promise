@@ -1,0 +1,102 @@
+body{
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    background-color: #310A69;
+}
+
+.log_body{
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+    padding: 25px;
+    min-width: 220px;
+    min-height: auto;
+    background-color: #D9D9D9;
+    border-radius: 15px;
+}
+.log_image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.log_image img{
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+.log_message{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor:default;
+
+}
+.log_message p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:larger;
+}
+.log_text{
+    display: flex;
+    flex-direction: row;
+    /* min-width: 80vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:70px;
+}
+.log1{
+    display: flex;
+    flex-direction: row;
+    background-color: #BBBBBB;
+    justify-content: center;
+    align-items: center;
+    min-width: 13vw;
+    gap:10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.log_p1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* flex:1; */
+}
+.log_p1 img{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+.log_p2{
+    display: flex;
+    
+    align-items: center;
+    justify-content: center;
+}
+.log_p2 p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+
+.log2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #CE2323;
+    min-width: 15vw;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.log_p2p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.log_p2p p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
