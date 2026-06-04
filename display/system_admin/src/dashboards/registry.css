@@ -1,0 +1,224 @@
+body{
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    min-width: 100vw;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.dash_1{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: normal;
+    min-width: 100vw;
+    max-height: 100vh;
+    margin: 0;
+    gap:5px;
+}
+.dash_head{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.dash_head p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:large;
+    
+}
+.dash_up{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    gap:35px;
+    
+}
+.dash_time{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    gap:5px;
+    background-color: #9B55FF;
+    min-width: 40vw;
+    border-radius: 20px;
+    min-height: 20vh;
+}
+.dash_t1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dash_t1 p{
+font-family: 'Times New Roman', Times, serif;
+font-size:large;
+font-size: 30px;
+cursor: default;
+
+}
+.dash_t2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dash_t2 p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    cursor: default;
+}
+
+.dash_notifications{
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+  
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+}
+
+.dash_n1{
+     border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    gap:15px;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9D9D9;
+    min-width: 20vw;
+    min-height: 10vh;
+    padding: 5px;
+}
+.dash_n2{
+    padding: 5px;
+     border-radius: 15px;
+    min-height: 10vh;
+    display: flex;
+    min-width: 20vw;
+    flex-direction: row;
+    gap:25px;
+    align-items: center;
+    justify-content: center;
+    background-color: #D9D9D9;
+    
+}
+.dash_nt{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.dash_nt p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+.dash_image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dash_image img{
+    width:30px;
+    height: 30px;
+    object-fit: contain;
+}
+.dash_down{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:120px;
+}
+.dash_alerts{
+    background-color: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 40vw;
+    gap:5px;
+    border-radius: 20px;
+    
+}
+.dash_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dash_title p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:20px;
+    font-weight: bold;
+    cursor:default;
+}
+.dash_view{
+    display: flex;
+    flex-direction: row;
+    gap:35px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    
+}
+.dash_data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #BBBBBB;
+    border-radius: 10px;
+    min-width:20vw ;
+    cursor:pointer;
+    margin-bottom: 20px;
+    gap:15px;
+    padding: 15px;
+}
+.data_body{
+    align-items: center;
+    justify-content: left;
+    
+    display: flex;
+    background-color: #979797;
+    min-width:20vw;
+    border-radius: 15px;
+    
+    
+}
+.data_body p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+    margin-left: 15px;
+    
+}
+.dash_click{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 10px;
+    width:10vw;
+    color:white
+    /* flex:1; */
+}
+.dash_btn_alerts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.dash_tasks{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    /* flex:1; */
+    align-items: center;
+    justify-content: center;
+    background-color: #D9D9D9;
+}
+.dash_btn_tasks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+}
