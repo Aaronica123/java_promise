@@ -1,15 +1,25 @@
 
 import notification from "../images/others/notifications_logo.png";
 import profile from "../images/others/profile_logo.png";
+import Sidebar from "../sidebar/sidebar";
 import "./registry.css";
 function Dash_1(){
 
     return(
     <>
+    <div className="dash_design">
+    <div className="dash_side">
+        <Sidebar/>
+
+    </div>
     <div className="dash_1">
         <div className="dash_head">
-            <p>Dashboard</p>
+            <div className="dash_tx">
+                <p>Dashboard</p>
+            </div>
+            
         </div>
+        <div className="dash_body">
         <div className="dash_up">
             <div className="dash_time">
                 <div className="dash_t1">
@@ -67,6 +77,7 @@ function Dash_1(){
                 <div className="dash_title">
                     <p>Pending Tasks</p>
                 </div>
+                <div className="dash_list">
                 <div className="dash_body">
                     <p>Pending Task</p>
                 </div>
@@ -75,6 +86,7 @@ function Dash_1(){
                 </div>
                 <div className="dash_body">
                     <p>Pending Task</p>
+                </div>
                 </div>
                 <div className="dash_btn_tasks">
                     <p>View All Tasks</p>
@@ -82,7 +94,8 @@ function Dash_1(){
 
             </div>
         </div>
-
+</div>
+    </div>
     </div>
     </>)
 }

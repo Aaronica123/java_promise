@@ -1,4 +1,4 @@
-body {
+/* body {
   box-sizing: border-box;
   margin: 0;
   display: flex;
@@ -7,7 +7,7 @@ body {
   min-height: 100vh;
   background-color: #f0f0f0;
     background-color: #310A69;
-}
+} */
 
 .body {
   display: flex;

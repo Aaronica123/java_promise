@@ -1,4 +1,4 @@
-body{
+/* body{
     align-items: center;
     justify-content: center;
     margin: 0;
@@ -6,7 +6,7 @@ body{
     min-height: 100vh;
     display: flex;
     background-color: #310A69;
-}
+} */
 
 .log_body{
     display: flex;
