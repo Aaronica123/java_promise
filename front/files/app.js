@@ -10,8 +10,15 @@ import { view_audits } from "./actions/view_audit.js";
 import create_item from "./actions/create_item.js";
 import create_order from "./actions/orders/create_order.js";
 import approve_order from "./actions/orders/approve_order.js";
+import cors from "cors";
 const app=express();
 
+app.use(cors({
+    origin: 'http://localhost:5173', // Your React app's URL
+    credentials: true, // Important if you're using sessions
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 const config={
     secret:password,
     resave:false,

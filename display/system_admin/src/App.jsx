@@ -4,6 +4,7 @@ import Error from './notifications/error.jsx';
 import Logout from './notifications/logout.jsx';
 import Sidebar from './sidebar/sidebar.jsx';
 import Dash_1 from './dashboards/registry_dashboard.jsx';
+import Login from './dashboards/login.jsx';
 
 function App() {
 
@@ -14,7 +15,8 @@ function App() {
     {/* <Error/> */}
     {/* <Logout/> */}
     {/* <Sidebar/> */}
-    <Dash_1/>
+    {/* <Dash_1/> */}
+    <Login/>
     </>
   )
 }
