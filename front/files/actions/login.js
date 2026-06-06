@@ -5,6 +5,7 @@ import create from "./create_audit.js";
 
 export async function new_login(req,res){
     try{
+        console.log("receieved");
         const{user_id,pass1}=req.body;
         const fetch =await user_obj.findOne({user_id:user_id});
         if(fetch){
@@ -18,7 +19,7 @@ export async function new_login(req,res){
                     now,
                     full_name:fetch.full_name
                 }
-                await create(req,res);
+                await create(req);
                 console.log("complete");
 
             }
@@ -30,7 +31,7 @@ export async function new_login(req,res){
                     now,
                     full_name:fetch.full_name
                 }
-                await create(req,res);
+                await create(req);
                  console.log("complete");
 
 
@@ -38,7 +39,8 @@ export async function new_login(req,res){
 
         }
         else{
-            return res.json({"message":"the user doesnt exist"})
+            console.log("not found")
+            return res.status(404).json({"message":"the user doesnt exist"})
         }
     }
     catch(error){

@@ -16,11 +16,11 @@ export default async function assign_sess(req,res,body){
             req.session.save((erro)=>{
                 if(erro){
                     reject(erro)
-                    res.json({"message":"failed to update session"})
+                    res.status(409).json({"message":"failed to update session"})
                 }
                 else{
                     resolve();
-                    res.json({"message":"updated session"})
+                   return res.status(200).json({"message":"updated session"})
                 }
             })
         })
@@ -49,11 +49,12 @@ export default async function assign_sess(req,res,body){
             req.session.save((erro)=>{
                 if(erro){
                     reject(erro);
-                res.json({"message":"failed to create new session"});
+                return res.status(409).json({"message":"failed to create new session"});
                 }
                 else{
-                    res.json({"message":"Created new user"})
-                    resolve();
+                resolve();
+                return res.status(200).json({"message":"Created new user"})
+                    
                 }
                 
             })

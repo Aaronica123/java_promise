@@ -1,6 +1,6 @@
 import audit_obj from "../models/audits_model.js";
 
-export default async function create(req,res){
+export default async function create(req){
 try{
     if(!req.session.user){
         // res.status(404).json({"message":"Invalid session"});

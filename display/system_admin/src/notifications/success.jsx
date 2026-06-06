@@ -2,8 +2,8 @@ import React from "react";
 import "./success.css";
 import success from "../images/navigate/success_image.png"
 import back from "../images/navigate/back-icon.png"
-function Success_alert(){
-    const check=true;
+function Success_alert(req){
+    const check=req.ch;
     
 
     return(
