@@ -7,10 +7,15 @@ import "./login.css";
 import { useState ,useEffect} from "react";
 import Success_alert from "../notifications/success";
 import { useNavigate } from "react-router-dom";
+import set_session from "../security/set";
+// import Load from "../notifications/loading";
+
 function Login(){
     const [note,setnote]=useState(false);
     const [error,seterror]=useState(false);
+    const [set,setload]=useState(true);
     const nav1=useNavigate();
+    const [ms,setms]=useState("Log in");
     
     const[form,setform]=useState({
         password:"",
@@ -23,40 +28,45 @@ function Login(){
         })
         
     }
+    
    
     const connect=async(e)=>{
         e.preventDefault();
         try
         {
-
-        alert(form.user_id + form.password)
+        setload(false);
+        setms("logging in");
         const resp=await fetch('http://localhost:3001/new/login',{
             'method':"POST",
             'headers':{
                 'Content-Type':'application/json'
             },
+            "credentials": "include",
             'body':JSON.stringify({
                 "user_id":form.user_id,
                 "pass1":form.password
             })
         })
-        alert(resp.status);
-        const j=resp.json();
-        alert(j.message);
+
         if(resp.status==200||resp.status==201){
-            alert("log in successful");
             setform({
             password:"",
             user_id:""
         })
+        const bd=await resp.json();
         
+        if(bd.state){
+            set_session.setrole(bd.state,bd);
+            console.log("done");
+        }
         setnote(true);
         
 
         }
         else{
-            alert("login failed");
+            console.log("login failed");
             seterror(true);
+            set_session.setrole(false,{});
         }
         }
         catch(error){
@@ -64,14 +74,19 @@ function Login(){
         }
     }
     
-
+useEffect(()=>{
+            if(!set){
+                const ti=setTimeout(()=>{setms("Log in"),setload(true)},5000);
+                return ()=>clearTimeout(ti);
+            }
+        },[set])
  useEffect(() => {
         if (note) {
-            const timer = setTimeout(() => {setnote(false),nav1("/dashboard")}, 5000);
+            const timer = setTimeout(() => {setnote(false),nav1("/dashboard")}, 2000);
             //set timeout takes the function and the timeout so after that timeout it 
             return () => clearTimeout(timer);
         }
-    }, [note,nav1]);
+    },[note,nav1]);
 
 useEffect(()=>{
     if(error){
@@ -79,6 +94,7 @@ useEffect(()=>{
         return ()=>clearTimeout(tr);
     }
 },[error]);
+
     return (
         <>
        
@@ -127,7 +143,8 @@ useEffect(()=>{
                     </div>
                     <div className="login_3">
                         
-                           <button type="submit">Login</button>
+                           <button type={set?"submit":"button"} className={set?"active":"deactive"}>
+                            {ms}</button>
                         
                     </div>
                     <div className="login_social">

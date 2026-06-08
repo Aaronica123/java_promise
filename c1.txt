@@ -1,0 +1,29 @@
+// backend session verification route
+app.get('/verify-session', (req, res) => {
+    if (req.session.user && req.session.user.user_id) {
+        // Return non-sensitive user info only
+        res.json({
+            authenticated: true,
+            user: {
+                user_id: req.session.user.user_id,
+                full_name: req.session.user.full_name,
+                role: req.session.user.role,
+                email: req.session.user.email
+            }
+        });
+    } else {
+        res.status(401).json({ authenticated: false });
+    }
+});
+
+// Logout endpoint
+app.post('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            res.status(500).json({ message: 'Logout failed' });
+        } else {
+            res.clearCookie('connect.sid'); // Clear session cookie
+            res.json({ message: 'Logged out successfully' });
+        }
+    });
+});

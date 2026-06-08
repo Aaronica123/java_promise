@@ -1,0 +1,90 @@
+// session.js - Secure session manager
+class SecureSessionManager {
+    constructor() {
+        this.sessionChecked = false;
+        this.isValidSession = false;
+        this.currentUser = null;
+    }
+
+    // Check session validity with backend
+    async verifySession() {
+        try {
+            const response = await fetch('http://localhost:3001/verify-session', {
+                method: 'GET',
+                credentials: 'include', // Important: sends cookies
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                this.isValidSession = true;
+                this.currentUser = data.user;
+                
+                // Cache non-sensitive data only
+                sessionStorage.setItem('isAuthenticated', 'true');
+                sessionStorage.setItem('full_name', data.user.full_name);
+                sessionStorage.setItem('role', data.user.role);
+                // DON'T store user_id or sensitive data
+                
+                return true;
+            } else {
+                this.clearSession();
+                return false;
+            }
+        } catch (error) {
+            console.error('Session verification failed:', error);
+            this.clearSession();
+            return false;
+        }
+    }
+
+    clearSession() {
+        this.isValidSession = false;
+        this.currentUser = null;
+        sessionStorage.removeItem('isAuthenticated');
+        sessionStorage.removeItem('full_name');
+        sessionStorage.removeItem('role');
+    }
+
+    // Check if user is logged in (with validation)
+    async isLoggedIn() {
+        // If we haven't checked session yet, verify with backend
+        if (!this.sessionChecked) {
+            this.sessionChecked = true;
+            return await this.verifySession();
+        }
+        return this.isValidSession;
+    }
+
+    // Synchronous check for UI (less secure, but useful for quick checks)
+    isLoggedInSync() {
+        return sessionStorage.getItem('isAuthenticated') === 'true';
+    }
+
+    getRole() {
+        return sessionStorage.getItem('role') || 'guest';
+    }
+
+    getFullName() {
+        return sessionStorage.getItem('full_name') || '';
+    }
+
+    async logout() {
+        try {
+            await fetch('http://localhost:3001/logout', {
+                method: 'POST',
+                credentials: 'include'
+            });
+        } catch (error) {
+            console.error('Logout error:', error);
+        } finally {
+            this.clearSession();
+            window.location.href = '/login';
+        }
+    }
+}
+
+const sessionManager = new SecureSessionManager();
+export default sessionManager;

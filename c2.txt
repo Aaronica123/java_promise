@@ -1,0 +1,44 @@
+// ProtectedRoute.jsx
+import { Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import sessionManager from '../utils/session';
+
+function ProtectedRoute({ children, requiredRole = null }) {
+    const [isAuthorized, setIsAuthorized] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const checkAuth = async () => {
+            const isLoggedIn = await sessionManager.isLoggedIn();
+            
+            if (!isLoggedIn) {
+                setIsAuthorized(false);
+                setIsLoading(false);
+                return;
+            }
+
+            // Check role if required
+            if (requiredRole) {
+                const userRole = sessionManager.getRole();
+                if (userRole !== requiredRole && userRole !== 'admin') {
+                    setIsAuthorized(false);
+                    setIsLoading(false);
+                    return;
+                }
+            }
+
+            setIsAuthorized(true);
+            setIsLoading(false);
+        };
+
+        checkAuth();
+    }, [requiredRole]);
+
+    if (isLoading) {
+        return <div>Loading...</div>; // Or your loading component
+    }
+
+    return isAuthorized ? children : <Navigate to="/login" replace />;
+}
+
+export default ProtectedRoute;

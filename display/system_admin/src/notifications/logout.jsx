@@ -2,7 +2,43 @@
 import "./logout.css";
 import back from "../images/navigate/back_arrow.png";
 import alert from "../images/navigate/alert_logo.png";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import set_session from "../security/set.js";
+
 function Logout(){
+    const nav1=useNavigate();
+    const [mess,setmess]=useState("Log Out");
+    const [state,setstate]=useState(false);
+    const log=async()=>{
+        setmess("Logging out");
+       const resp=await fetch("http://localhost:3001/delete_session",{
+            "method":"DELETE",
+            "headers":{
+                "Content-Type":"application/json"
+            },
+            "cridentials": "include",
+            "body":JSON.stringify({})
+        })
+        if(resp.status==200||resp.status==201){
+            set_session.deleterole();
+            sessionStorage.clear();
+            console.log("reached");
+            setstate(true);
+        }
+        
+    }
+    
+    useEffect(()=>{
+        if(state){
+            console.log("log out");
+            const ti=setTimeout(()=>{setmess("Logged out"),nav1("/login"),setstate(false)},2000)
+            return ()=>clearTimeout(ti);
+        }
+        else {
+            console.log("Alert")
+        }
+    },[state,nav1])
     return (
         <>
         <div className="log_body">
@@ -22,9 +58,10 @@ function Logout(){
                 </div>
                 </div>
                 <div className="log2">
-                <div className="log_p2p">
-                    <p>Proceed To Logout</p>
-                </div>
+                <button className="log_p2p" onClick={log}>
+
+                    <div>{mess}</div>
+                </button>
                 </div>
 
             </div>

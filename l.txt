@@ -1,0 +1,52 @@
+// Your class WITH listeners
+class set_session {
+    constructor(){
+        this.auth = false;
+        this.listeners = [];  // Empty phone list to start
+    }
+    
+    // "Subscribe" means "Add me to the phone list"
+    subscribe(listener) {
+        this.listeners.push(listener);  // Add to list
+        // Return a way to remove from list later
+        return () => {
+            this.listeners = this.listeners.filter(l => l !== listener);
+        };
+    }
+    
+    // "Notify" means "Call everyone on the phone list"
+    notify() {
+        this.listeners.forEach(listener => listener(this.auth));
+    }
+    
+    check(bd){
+        if(bd.state){
+            this.auth = true;
+            this.notify();  // 📞 CALL EVERYONE! "Hey, auth is now true"
+        }
+    }
+    
+    deleterole(){
+        this.auth = false;
+        this.notify();  // 📞 CALL EVERYONE! "Hey, auth is now false"
+    }
+}
+
+// React component using your class
+function Dashboard() {
+    const [isLoggedIn, setIsLoggedIn] = useState(session.auth);  // Start with current value
+    
+    useEffect(() => {
+        // 📞 "Add me to the phone list"
+        const unsubscribe = session.subscribe((newAuthState) => {
+            // This function runs EVERY TIME auth changes
+            console.log("Auth changed to:", newAuthState);
+            setIsLoggedIn(newAuthState);  // Update React state
+        });
+        
+        // When component unmounts, remove from phone list
+        return unsubscribe;
+    }, []);
+    
+    return <div>{isLoggedIn ? "Welcome" : "Please login"}</div>;
+}

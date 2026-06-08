@@ -11,6 +11,7 @@ import create_item from "./actions/create_item.js";
 import create_order from "./actions/orders/create_order.js";
 import approve_order from "./actions/orders/approve_order.js";
 import cors from "cors";
+import delete_session from "./sessions/delete.js";
 const app=express();
 
 app.use(cors({
@@ -42,4 +43,5 @@ app.get("/view_audits",view_audits);
 app.post("/create_item",create_item);
 app.post("/create_order",create_order);
 app.post("/approve_order",approve_order);
+app.delete("/delete_session",delete_session);
 export default app;

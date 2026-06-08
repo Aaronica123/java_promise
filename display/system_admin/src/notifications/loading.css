@@ -1,0 +1,28 @@
+.load_body{
+display: flex;
+flex-direction: column;
+min-width:20vw;
+min-height: 20vh;
+background-color: antiquewhite;
+align-items: center;
+justify-content: center;
+}
+.load_image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.load_image img{
+    width:30px;
+    height: 30px;
+    object-fit: contain;
+}
+.load_text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.load_text p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
