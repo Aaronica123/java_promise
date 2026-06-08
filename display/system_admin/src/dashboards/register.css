@@ -1,0 +1,196 @@
+.register_design{
+    display:flex;
+    flex-direction: row;
+    align-items: stretch;
+    /* width:100vw;
+    height: 100vh; */
+    
+    
+}
+
+.register_header{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    margin-left:250px;
+    margin-top: 5px;
+    justify-content: center;
+   
+}
+.register-title{
+    display: flex;
+    min-width:fit-content;
+    min-height: auto;
+    
+    justify-content: left;
+}
+.re1{
+    background-color: beige;
+    padding: 10px;min-width: 20vw;
+    border-radius: 20px;
+}
+.register-title p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+.register_body{
+    display: flex;
+    flex-direction: row;
+    gap:55px;
+    align-items: center;
+    justify-content: center;
+    /* width: 50vw; */
+    min-width: 55vw;
+    min-height: 60vh;
+    background-color: aquamarine;
+    padding: 20px;
+    border-radius: 20px;
+}
+.form_1{
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    height: 100%;
+    gap:40px;
+    border-radius: 10px;
+    
+}
+.f1_group{
+    display: flex;
+    gap:15px;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.f1_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -20px;
+    cursor: default;
+}
+
+.f1_title p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+
+}
+.f1_steps{
+    display: flex;
+    width:fit-content;
+    height: auto;
+    background-color: rgb(32, 165, 172);
+    width: 65%;justify-content: center;
+    align-items: center;
+    border-radius:10px ;
+    cursor: default;
+    /* padding: 1px; */
+}
+
+.f1_notify{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    width:65%;
+    border-radius: 10px;
+    gap:20px;
+    cursor: default;
+    padding: 5px;
+}
+.f1_text{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f1_image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f1_image img{
+    width:30px;
+    height: 30px;
+    object-fit: contain;
+}
+.form_2{
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    border-radius: 10px;
+    height: 100%;
+    gap:40px;
+}
+.f2_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -30px;
+    margin-top: 10px;
+}
+.f2_title p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+.f2_body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    gap:10px;
+    width: 100%;
+}
+.f2_label{
+    align-items: stretch;
+    justify-content: left;
+    display: flex;
+    width: 65%;
+}
+.f2_input{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.f2_input input{
+    padding: 5px;
+}
+.f2_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width:70%;
+    gap:30px;
+    margin: 25px;
+    height: 8vh;
+    
+    
+}
+
+.btn_text{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.btn_text p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+.btn_image{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+.btn_image img{
+    width:30px;
+    height: 30px;
+    object-fit: contain;
+}
