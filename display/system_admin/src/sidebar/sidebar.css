@@ -107,7 +107,54 @@
     border-radius: 10px;
     padding: 10px;
 }
+.sidebar_item_reg{
+    display: flex;
+    flex-direction: row;
+    gap:25px;
+    justify-content: center;
+    align-items: center;
+    background-color: #986DD7;
+    min-width: 15vw;
+    cursor: pointer;
+    border-radius: 10px;
+}
 
+.sidebar_hide .sidebar_item_reg{
+    display: flex;
+    flex-direction: row;
+    gap:25px;
+    justify-content: center;
+    align-items: center;
+    background-color: #986DD7;
+    min-width: 5vw;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+}
+.sidebar_item_dash{
+    display: flex;
+    flex-direction: row;
+    gap:25px;
+    justify-content: center;
+    align-items: center;
+    background-color: #986DD7;
+    min-width: 15vw;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.sidebar_hide .sidebar_item_dash{
+    display: flex;
+    flex-direction: row;
+    gap:25px;
+    justify-content: center;
+    align-items: center;
+    background-color: #986DD7;
+    min-width: 5vw;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+}
 .sidebar_image{
     display: flex;
     align-items: flex-start;

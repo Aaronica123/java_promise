@@ -8,6 +8,7 @@ import Login from './dashboards/login.jsx';
 import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 import Payload from './security/role.jsx';
 import Register_form from './dashboards/register_form.jsx';
+
 function App() {
 
 
@@ -19,19 +20,21 @@ function App() {
     {/* <Sidebar/> */}
     {/* <Dash_1/> */}
     {/* <Login/> */}
-    {/* <Router>
+    {/* <Register_form/> */}
+    <Router>
       <Routes>
         <Route path="/" element={<Login/>}/>
         <Route path="/login" element={<Login/>}/>
+        {/* <Route path="/logout" element={<Logout/>}/> */}
         <Route path='/dashboard' element={
           <Payload>
           <Dash_1/>
           </Payload>
         }/>
+        <Route path="/register"element={<Register_form/>}/>
         
       </Routes>
-    </Router> */}
-    <Register_form/>
+    </Router>
     </>
   )
 }

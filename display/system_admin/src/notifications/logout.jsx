@@ -66,11 +66,11 @@ function Logout(){
                     <p>Go Back</p>
                 </div>
                 </div>
-                <div className="log2">
-                <button className="log_p2p" onClick={log}>
+                <button className="log2">
+                <div className="log_p2p" onClick={log}>
                     <div>{mess}</div>
-                </button>
                 </div>
+                </button>
             </div>
         </div>
         </>

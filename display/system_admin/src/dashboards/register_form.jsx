@@ -1,16 +1,20 @@
 import next from "../images/navigate/next_icon.png";
 import file_complete from "../images/others/file-complete_40445.png";
 import cancel from "../images/others/cancel_logo.png";
+import Sidebar from "../sidebar/sidebar";
 import "./register.css";
 function Register_form(){
     return(
 <>
 <div className="register_design">
+    <div className="side_dash">
+        <Sidebar/>
+    </div>
     <div className="register_header">
         
         <div className="register-title">
             <div className="re1">
-                <h2>DASHBOARD</h2>
+                <h2>Registry</h2>
             </div>
             
         </div>

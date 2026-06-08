@@ -15,7 +15,7 @@ function Dash_1(){
     <div className="dash_1">
         <div className="dash_head">
             <div className="dash_tx">
-                <p>Dashboard</p>
+                <h1>Dashboard</h1>
             </div>
             
         </div>
