@@ -8,13 +8,28 @@
     
     
 }
+.f3{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    justify-content: left;
+    align-items: center;
+   margin:-30px;
+   
+  
+}
+.f2{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
 .side_dash{
     flex-shrink: 0;
 }
 .register_header{
     display: flex;
     flex-direction: column;
-    gap:30px;
+    gap:10px;
     margin-left:30px;
     margin-top: 0px;
     justify-content: center;
@@ -38,16 +53,43 @@
 }
 .register_body{
     display: flex;
-    flex-direction: row;
-    gap:55px;
+    flex-direction: column;
+    gap:15px;
     align-items: center;
     justify-content: center;
     /* width: 50vw; */
     min-width: 55vw;
     min-height: 60vh;
     background-color: aquamarine;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
+    
+}
+.reg_bd{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+    /* margin-bottom: 40px; */
+}
+.btn_reg{
+    display: flex;
+    justify-content: right;
+    align-items:center;
+    /* background-color: aqua; */
+    width: 100%;
+}
+.ti{
+    width: 30%;
+    background-color: bisque;
+    margin-right: 25px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
 }
 .form_1{
     background-color: bisque;
@@ -106,6 +148,18 @@
     cursor: default;
     padding: 5px;
 }
+.f1_complete{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(4, 255, 0);
+    width:65%;
+    border-radius: 10px;
+    gap:20px;
+    cursor: default;
+    padding: 5px;
+}
 .f1_text{
     display: flex;
     align-items: center;
@@ -138,6 +192,7 @@
     align-items: center;
     margin: -20px;
     margin-top: 10px;
+    position: relative;
 }
 .f2_title p{
     font-family: 'Times New Roman', Times, serif;

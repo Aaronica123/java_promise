@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import set_session from "./set.js";
-
+import { useNavigate } from "react-router-dom";
 function Payload({children}){
     const[role,setrl]=useState(false);
     const[checkTrigger, setCheckTrigger] = useState(0); // Add this
-
+    const nav=useNavigate();
+    const n=()=>{
+        nav("/")
+    };
     // Add this function to manually trigger re-check
     const refreshAuthStatus = () => {
         setCheckTrigger(prev => prev + 1);
