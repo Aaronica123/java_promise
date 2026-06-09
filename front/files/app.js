@@ -12,6 +12,7 @@ import create_order from "./actions/orders/create_order.js";
 import approve_order from "./actions/orders/approve_order.js";
 import cors from "cors";
 import delete_session from "./sessions/delete.js";
+import fetch_orders from "./actions/orders/fetch_order.js";
 
 import { fetch_roles } from "./actions/fetch_roles.js";
 const app=express();
@@ -47,5 +48,6 @@ app.post("/create_order",create_order);
 app.post("/approve_order",approve_order);
 app.delete("/delete_session",delete_session);
 app.get("/fetch_roles",fetch_roles);
+app.get("/fetch_orders",fetch_orders);
 
 export default app;
