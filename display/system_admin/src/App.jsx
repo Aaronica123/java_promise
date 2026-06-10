@@ -9,7 +9,10 @@ import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 import Payload from './security/role.jsx';
 import Register_form from './dashboards/register_form.jsx';
 import View_orders from './orders/view_orders.jsx';
-
+globalThis.p1=true;
+globalThis.p2=false;
+globalThis.count=-1;
+globalThis.buff=null;
 function App() {
 
 

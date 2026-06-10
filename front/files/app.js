@@ -13,10 +13,12 @@ import approve_order from "./actions/orders/approve_order.js";
 import cors from "cors";
 import delete_session from "./sessions/delete.js";
 import fetch_orders from "./actions/orders/fetch_order.js";
+// import bf from "../../display/system_admin/src/buffer/buffer.js";
 
+// bf();
 import { fetch_roles } from "./actions/fetch_roles.js";
 const app=express();
-
+// console.log(globalThis.act.toString());
 app.use(cors({
     origin: 'http://localhost:5173', // Your React app's URL
     credentials: true, // Important if you're using sessions
