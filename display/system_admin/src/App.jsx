@@ -26,9 +26,9 @@ function App() {
     {/* <Router>
       <Routes>
         <Route path="/" element={<Login/>}/>
-        <Route path="/login" element={<Login/>}/> */}
-        {/* <Route path="/logout" element={<Logout/>}/> */}
-        {/* <Route path='/dashboard' element={
+        <Route path="/login" element={<Login/>}/> 
+         <Route path="/logout" element={<Logout/>}/> 
+        <Route path='/dashboard' element={
           <Payload>
           <Dash_1/>
           </Payload>
