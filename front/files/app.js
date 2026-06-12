@@ -52,6 +52,6 @@ app.post("/approve_order",approve_order);
 app.delete("/delete_session",delete_session);
 app.get("/fetch_roles",fetch_roles);
 app.get("/fetch_orders",fetch_orders);
-app.get("/page",page);
+app.post("/page",page);
 
 export default app;

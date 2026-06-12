@@ -7,7 +7,7 @@ async function page(req,res){
         if(index){
             p=index;
         }
-        const amnt=3;
+        const amnt=10;
         
         const offset=(p-1)*amnt;
         //skip the first set in the offset then display the amnt data rows set by the index;
@@ -19,7 +19,7 @@ async function page(req,res){
         const prev_pg=index>1;
         const next_pg=index<pages;
 
-        console.log(resp);
+        console.log(data);
         res.status(200).json({"message":"found",
             data,
             next_pg,

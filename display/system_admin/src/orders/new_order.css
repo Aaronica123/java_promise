@@ -2,6 +2,9 @@
     display:flex;
     flex-direction: row;
     min-height: 100vh;
+    box-sizing: border-box;
+    
+    
 
 }
 .new_ord_dash{
@@ -32,11 +35,14 @@
 .new_ord_tb{
     display: flex;
     flex-direction: column;
-    width:fit-content;
+    min-width:100%;
     height: fit-content;
     gap: 10px;
     justify-content:right;
     align-items: flex-start;
+    background-color: chocolate;
+    padding: 25px;
+    border-radius: 20px;
 
 }
 .new_ord1{
@@ -45,6 +51,7 @@
     width:100%;
     height: fit-content;
     align-items: flex-start;
+    margin-left: 20px;
 }
 
 .new_ord1_title{
@@ -58,7 +65,8 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    gap:5px;
+    gap:15px;
+    margin-left: 35px;
 }
 .new_ordbtn{
     display: flex;
@@ -82,7 +90,15 @@
     width: 100%;
     height: 100%;
     background-color: aqua;
+    padding: 15px;
+    border-radius: 20px;
+}
+.new{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
     padding: 25px;
+
 }
 .page_count{
     display: flex;
@@ -108,15 +124,17 @@ font-size: larger;
     /* align-items: center; */
     width:100%;
     height: fit-content;
-    background-color: rgb(255, 127, 193);
+     background-color: blue;
+     border-radius: 5px;
 }
 .new_ord_label{
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
     /* gap:5px; */
-    align-items: center;
-    background-color: blue;
+    /* align-items: center; */
+    background-color: rgb(47, 255, 0);
+    border-radius: 5px;
     /* width:fit-content;
     height: fit-content; */
 }
@@ -149,9 +167,15 @@ font-size: larger;
 .new_ord_data{
     /* margin-left: 15px; */
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    /* justify-content: center; */
     background-color: blue;
+    height:50vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    gap:18px;
+    padding: 10px;
+    
     /* align-items: center; */
     /* gap:5px; */
 }
@@ -175,9 +199,13 @@ font-size: larger;
     justify-content: left;
     display: flex;
     align-items: center;
+    /* gap:10px; */
     margin-left: 15px;
+   
+    
     
 }
+
 .ord_data1 p{
     font-family: 'Times New Roman', Times, serif;
     font-size: large;
@@ -190,6 +218,7 @@ font-size: larger;
     width: fit-content;
     height: fit-content;
     gap:10px;
+    margin-top: 5px;
 }
 .ord_btn1{
 display: flex;
@@ -216,4 +245,15 @@ background-color: rgb(255, 255, 255);
 .btn_text p{
     font-family: 'Times New Roman', Times, serif;
     font-size: large;
+}
+.ord_1w{
+    display: flex;
+    flex-direction: row;
+    /* gap:10px; */
+    
+     background-color: yellowgreen;
+     border-radius: 10px;
+     
+
+    
 }
