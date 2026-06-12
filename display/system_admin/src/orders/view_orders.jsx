@@ -12,43 +12,185 @@ function View_orders(){
         const[l3,setl3]=useState("");
         const[l4,setl4]=useState("");
         const[l5,setl5]=useState("");
+        const[count,setcount]=useState(-1);
         const [ar,setar]=useState([]);
         const [fin,setfin]=useState([]);
+        const [p1,setp]=useState(0);
     //    var l1="";
     //    var l2="";
     //    var l3="";
     //    var l4="";
     //    var l5="";
-    function Tarm(text,count){
-    //    console.log("text is "+ text);
-        const s=String(text);
-        const bf=Buffer.alloc(s.length);
-        bf.write(s);
-        // console.log(s);
-        const l=Object.values(s);
-        // console.log(l)
-        if(ck<count){
-            if(ck==1){
-                setl1(bf.toString());
-                setck(ck+1);
-            }else if(ck==2){
-                setl2(bf.toString());
-                setck(ck+1);
-            }
-            else if(ck==3){
-                setl3(bf.toString());
-                setck(ck+1);
-            }
-            else if(ck==4){
-                setl4(bf.toString());
-                setck(ck+1);
-            }
-            else if(ck==5){
-                setl5(bf.toString());
-                 setck(0);
-            }
+    let lp=0;
+    const[column,setcolumn]=useState(0);
+    const[total_data,set_total]=useState(0);
+    const[row,setRow]=useState(0);
+    const[track,settrack]=useState(0);
+const [cl_track,set_cl]=useState(0);
+const[rl_track,set_tr]=useState(0);
+    function Tarm(vr1,total_data,data_row){
+        console.log(vr1.length)
+        vr1.forEach((e)=>{
+            const l=Object.values(e);
+            console.log(l.length)
+            l.forEach((item,index)=>{
+                // console.log(index);
+                if((index%vr1.length)==0){
+                    setl1(item);
+                    console.log("the value0 " + item);
+                }
+                else if((index%vr1.length)==1){
+                    setl2(item);
+                    console.log("the value1 "+item);
+                }
+                else if((index%vr1.length)==2){
+                    setl3(item);
+                    console.log("the value2 "+ item);
+                }
+                 else if((index%vr1.length)==3){
+                    console.log(item)
+                    setl4(String(item));
+                    console.log("the value3 "+ item);
+                }
+                 else if((index%vr1.length)==4){
+                    setl5(item);
+                    console.log("the value4 "+ item);
+                }
 
-        }
+            })
+        })
+        
+        
+        // console.log("vlaue is " + vr.length);
+        // console.log("vlaue length is " + vr1.length);
+        setRow(data_row);
+        set_total(total_data);
+setcolumn(total_data/data_row);
+// while(rl_track<row){
+//     while(cl_track<column){
+let tr=0;
+// console.log("the value is now "+vr[0]);
+//         vr.forEach((l)=>{
+//             let v=tr+=1;
+//             set_cl(tr+=1);
+//             console.log("the value l is "+l)
+//             const st=String(l);
+//             const bf=Buffer.alloc(st.length);
+//             console.log(v);
+//             if(rl_track%cl_track==0){
+//                 bf.write(st);
+//                 console.log("value is "+bf.toString());
+//                 setl1(bf.toString())
+//             }
+//             else if(rl_track%cl_track==1){
+//                 bf.write(st);
+//                 setl2(bf.toString())
+//             }else if(rl_track%cl_track==2){
+//                 bf.write(st);
+//                 setl3(bf.toString())
+//             }
+//             else if(rl_track%cl_track==3){
+//                 bf.write(st);
+//                 setl4(bf.toString())
+//             }
+//             else if(rl_track%cl_track==4){
+//                 bf.write(st);
+//                 setl5(bf.toString())
+//             }
+//         }) 
+//         set_cl(cl_track+1);
+// //     }
+// // }
+
+    //     vr.forEach((l)=>{
+    //         console.log("the value l is "+l)
+    //     // console.log(l)
+    //     })
+    //     // console.log("lk is "+lk)
+    // vr.forEach((t)=>{
+    //             const l=Object.values(t);
+    //             l.forEach((p)=>{
+    //                 // const l=Object.values(p);
+    //                 console.log("vr items are "+ p)
+    //                 const st=String(p);
+    //                 lp++;
+    //                 setcount(lp);
+    //                 let b=Number(lp)
+    //                 console.log(" b is "+b)
+    //                 setp(b);
+    //                 console.log("count is value" + lp);
+    //                 console.log("p values are "+p1);
+                    
+    //                 setck(7);
+    //                 // Tarm(p,l.length,b);
+    //                 // if((count%l.length)==0){
+    //                 //     const bf=Buffer.alloc(st.length);
+                        
+    //                 //     bf.write(st)
+    //                 //     setl1(bf.toString())
+    //                 // }else if((count%length)==1){
+    //                 //     const bf=Buffer.alloc(st.length);
+    //                 //     bf.write(st)
+    //                 //     setl2(bf.toString())
+    //                 // }else if((count%length)==2){
+    //                 //     const bf=Buffer.alloc(st.length);
+    //                 //     bf.write(st)
+    //                 //     setl3(bf.toString())
+    //                 // }else if((count%length)==3){
+    //                 //     const bf=Buffer.alloc(st.length);
+    //                 //     bf.write(st)
+    //                 //     setl4(bf.toString())
+    //                 // }else if((count%length)==4){
+    //                 //     const bf=Buffer.alloc(st.length);
+    //                 //     bf.write(st)
+    //                 //     setl5(bf.toString())
+    //                 //     setcount(-1);
+    //                 // }
+                    
+    //                 // bf.write(st);
+    //                 fin.push(p);
+    //             })
+    //         })
+        // const s=String(text);
+        // const bf=Buffer.alloc(s.length);
+        // bf.write(s);
+        // console.log("s is "+s);
+        // // const l=Object.values(s);
+        // // console.log(l)
+        // setck(7);
+        // console.log("tr values "+tr)
+        
+        // console.log("bn value is "+ globalThis.bn);
+        // setp(tr);
+        // let l=tr;
+        // console.log("count is value of p " + p1);
+        // console.log("count is "+cnt)
+        // console.log("ck is "+ck)
+        // console.log("len is "+l)
+        // if(l<cnt){
+        //     console.log(ck)
+        //     if(l%cnt==0){
+        //         setl1(bf.toString());
+                
+
+        //     }else if(l%cnt==1){
+        //         setl2(bf.toString());
+                
+        //     }
+        //     else if(ck%cnt==2){
+        //         setl3(bf.toString());
+                
+        //     }
+        //     else if(ck%cnt==3){
+        //         setl4(bf.toString());
+                
+        //     }
+        //     else if(ck%cnt==4){
+        //         setl5(bf.toString());
+        //          setck(-1);
+        //     }
+
+        // }
        }
     
         async function hold(){
@@ -59,32 +201,81 @@ function View_orders(){
                 }
             })
             const sp=await resp.json();
-            console.log(sp)
-            console.log(sp.resp);
+            // console.log(sp)
+            // console.log(sp.resp);
             const re=sp;
             const h=[]
             const vr=sp.resp;
-            console.log("this is vr" + vr);
+            
+            console.log("this is vr length " + vr.length);
+            let cons=count;
+            let total_data=0;
+            vr.forEach((t)=>{
+                const l=Object.values(t);
+                l.forEach((p)=>{
+                    total_data++;
+                })
+                
+            })
+            console.log("total size is "+ total_data);
+            const data_row=vr.length;
+            console.log("data rows are "+ data_row)
+            // console.log("data has the following column")
             vr.forEach((t)=>{
                 const l=Object.values(t);
                 l.forEach((p)=>{
                     // const l=Object.values(p);
-                    console.log("vr items are "+ p)
+                    //console.log("vr items are "+ p)
+                    const st=String(p);
+                    cons++;
+                    setcount(cons);
+                    let b=Number(cons)
+                    //console.log(" b is "+b)
+                    setp({num:b});
+                    //console.log("count is value" + cons);
+                    
+                    setck(7);
+                    // Tarm(p,l.length,b);
+                    // if((count%l.length)==0){
+                    //     const bf=Buffer.alloc(st.length);
+                        
+                    //     bf.write(st)
+                    //     setl1(bf.toString())
+                    // }else if((count%length)==1){
+                    //     const bf=Buffer.alloc(st.length);
+                    //     bf.write(st)
+                    //     setl2(bf.toString())
+                    // }else if((count%length)==2){
+                    //     const bf=Buffer.alloc(st.length);
+                    //     bf.write(st)
+                    //     setl3(bf.toString())
+                    // }else if((count%length)==3){
+                    //     const bf=Buffer.alloc(st.length);
+                    //     bf.write(st)
+                    //     setl4(bf.toString())
+                    // }else if((count%length)==4){
+                    //     const bf=Buffer.alloc(st.length);
+                    //     bf.write(st)
+                    //     setl5(bf.toString())
+                    //     setcount(-1);
+                    // }
+                    
+                    // bf.write(st);
                     fin.push(p);
                 })
             })
-            console.log(fin)
+            //console.log(fin)
 
             h.push(Object.values(re));
-            console.log(h);
+            //console.log(h);
             // const y=[]
             // // const k=[];
             // const y1=[];
             // const final=[];
             // const now=[];
-             console.log(ar);
+             //console.log(ar);
             const st=sp.resp;
-            return {resp,fin};
+            return {resp,vr,data_row,total_data};
             // h.forEach((j)=>{
             //     // console.log("h is "+h)
             //     // console.log("j"+j)
@@ -246,17 +437,18 @@ function View_orders(){
          const dt=await hold();
          if(dt.resp.status==200){
         console.log("connection success");
-        const bd=dt.st;
+        const bd=dt.vr;
         // setar(bd);
         // console.log(ar);
         // ar.foreach((p)=>{
         //     console.log(p);
         // })
-        console.log(bd)
+        console.log("values is "+bd)
+        Tarm(dt.vr);
         
         
         const arr=bd;
-       console.log("type is "+ arr.type);
+    //    console.log("type is "+ arr.type);
         const y=[];
         // arr.forEach((are)=>{
         //     console.log(are);

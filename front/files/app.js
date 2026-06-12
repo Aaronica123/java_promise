@@ -13,6 +13,7 @@ import approve_order from "./actions/orders/approve_order.js";
 import cors from "cors";
 import delete_session from "./sessions/delete.js";
 import fetch_orders from "./actions/orders/fetch_order.js";
+import page from "./actions/orders/page.js";
 // import bf from "../../display/system_admin/src/buffer/buffer.js";
 
 // bf();
@@ -51,5 +52,6 @@ app.post("/approve_order",approve_order);
 app.delete("/delete_session",delete_session);
 app.get("/fetch_roles",fetch_roles);
 app.get("/fetch_orders",fetch_orders);
+app.get("/page",page);
 
 export default app;
