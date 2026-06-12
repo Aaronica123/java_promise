@@ -68,11 +68,20 @@
     gap:15px;
     margin-left: 35px;
 }
-.new_ordbtn{
+.active{
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: blueviolet;
+    /* padding: 15px; */
+    width:12vw;
+    height: 8vh;
+}
+.inactive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(43, 116, 226);
     /* padding: 15px; */
     width:12vw;
     height: 8vh;

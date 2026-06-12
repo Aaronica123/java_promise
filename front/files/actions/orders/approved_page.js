@@ -5,8 +5,12 @@ async function approved_page(req,res){
 const {index}=req.body;
 const total=await order_obj.countDocuments();
 const amnt=10;
-const offset=(index-1)*amnt;
-const data=await order_obj.find({approval:true},{__id:0,__v:0}).skip(offset).limit(amnt);
+var p=1;
+if(Number(index)){
+    p=index;
+}
+const offset=(p-1)*amnt;
+const data=await order_obj.find({approval:true},{_id:0,__v:0}).skip(offset).limit(amnt);
 const totaldata=Math.ceil(total/amnt);
 const next_page=index<totaldata;
 const prev_page=index>1;

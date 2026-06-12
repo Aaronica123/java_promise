@@ -7,7 +7,7 @@ async function page(req,res){
         if(index){
             p=index;
         }
-        const amnt=10;
+        const amnt=5;
         
         const offset=(p-1)*amnt;
         //skip the first set in the offset then display the amnt data rows set by the index;

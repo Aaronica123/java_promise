@@ -3,7 +3,62 @@ import "./new_order.css";
 
 function New_order() {
     const [hold, setHold] = useState([]);
-
+    const [hold1, setHold1] = useState([]);
+    const [btn,setbtn]=useState(
+       { btn1:true,btn2:false,btn3:false}
+    )
+    function b1(){
+        setbtn({btn1:true,btn2:false,btn3:false});
+        data();
+    }
+    function b2(){
+        setbtn({btn1:false,btn2:true,btn3:false});
+       approved();
+        
+    }
+    function b3(){
+        setbtn({btn1:false,btn2:false,btn3:true});
+       pending();
+    }
+    const approved=async()=>{
+        try{
+            const resp=await fetch("http://localhost:3001/fetch_approved",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    "index":0
+                })
+            })
+            const da=await resp.json();
+            const row=da.data.map((row)=>Object.values(row));
+            setHold(row);
+        }
+        catch(error){
+            console.log(error.message);
+        }
+    }
+    const pending=async()=>{
+        try{
+            const ft=await fetch("http://localhost:3001/pending",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                body:JSON.stringify({
+                    "index":0
+                })
+            })
+            const da=await ft.json();
+            const row=da.data.map((row)=>Object.values(row));          
+            setHold(row);
+        }
+        catch(error){
+            console.log(error.message);
+        }
+    }
+    
     const data = async () => {
         const ft = await fetch("http://localhost:3001/page", {
             method: "POST",
@@ -44,13 +99,13 @@ function New_order() {
                         </div>
                     </div>
                     <div className="new_ord2">
-                        <button className="new_ordbtn">
+                        <button className={btn.btn1?"active":"inactive"} onClick={b1}>
                             <div className="btn_text"><p>All Orders</p></div>
                         </button>
-                        <button className="new_ordbtn">
+                        <button className={btn.btn2?"active":"inactive"} onClick={b2}>
                             <div className="btn_text"><p>Approved Orders</p></div>
                         </button>
-                        <button className="new_ordbtn">
+                        <button className={btn.btn3?"active":"inactive"} onClick={b3}>
                             <div className="btn_text"><p>Pending Orders</p></div>
                         </button>
                     </div>
