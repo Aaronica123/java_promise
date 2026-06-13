@@ -11,6 +11,7 @@ import Register_form from './dashboards/register_form.jsx';
 import View_orders from './orders/view_orders.jsx';
 import New_order from './orders/new_order.jsx';
 import Create_order from './orders/create_order.jsx';
+import Dash_2 from './dashboards/dashboard.jsx';
 globalThis.p1=true;
 globalThis.p2=false;
 globalThis.count=-1;
@@ -31,6 +32,7 @@ function App() {
     {/* <View_orders/> */}
     {/* <New_order/> */}
     {/* <Create_order/> */}
+    {/* <Dash_2/> */}
     <Router>
       <Routes>
         <Route path="/" element={<Login/>}/>
@@ -44,6 +46,7 @@ function App() {
         <Route path="/register"element={<Register_form/>}/>
         <Route path="/create_order" element={<Create_order/>}/>
         <Route path="/view_order" element={<New_order/>}/>
+        <Route path="/dash_2" element={<Dash_2/>}/>
       </Routes>
     </Router>
     </>

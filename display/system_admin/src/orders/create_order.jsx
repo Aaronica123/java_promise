@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./create_order.css"
+import Sidebar from "../sidebar/sidebar";
 function Create_order(){
     const [form,setForm]=useState({
         order_id:"",item_id:"",amount:""
@@ -35,9 +36,9 @@ function Create_order(){
     return(
         <>
         <div className="create_order_design">
-            {/* <div className="create_order_dash">
-
-            </div> */}
+            <div className="create_order_dash">
+                <Sidebar/>
+            </div>
             <div className="create_order_body">
                 <div className="create_order">
                     <div className="create_title">

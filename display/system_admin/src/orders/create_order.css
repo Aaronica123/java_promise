@@ -4,6 +4,9 @@
     flex-direction: row;
     min-height: 100vh;
 }
+.create_order_dash{
+    flex-shrink: 0;
+}
 .create_order_body{
     display: flex;
     flex-direction: column;
