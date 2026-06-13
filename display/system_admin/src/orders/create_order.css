@@ -1,0 +1,217 @@
+.create_order_design{
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    min-height: 100vh;
+}
+.create_order_body{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+    margin-left: 30px;
+    width: 100%;
+    height: fit-content;
+}
+.create_order{
+    display: flex;
+    justify-content: left;
+    width:100%;
+    align-items: flex-start;
+    height: fit-content;
+}
+.create_title{
+    display: flex;
+    width:fit-content;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+.create_title h1{
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+.create_order_form{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    height: fit-content;
+    justify-content: left;
+    align-items: flex-start;
+     background-color: aqua;
+     padding: 30px;
+     border-radius: 20px;
+     gap:50px;
+}
+.create_order1{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: left;
+    align-items: flex-start;
+}
+.create_order_frm{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    margin-bottom: -10px;
+}
+.create_order_frm h3{
+    font-family: 'Times New Roman', Times, serif;
+}
+.create_order2{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    
+}
+.create_order_p1{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    /* align-items: flex-start; */
+    width: 20vw;
+    height: 100%;
+    background-color: bisque;
+    border-radius: 10px;
+}
+.create_order_grp{
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+    justify-content: left;
+    align-items: flex-start;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 20px;
+}
+.create_order_label{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    width:100%;
+    height: fit-content;
+    justify-content: left;
+    align-items: flex-start;
+}
+.create_order_l1{
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    height: fit-content;
+}
+.create_orderl1 label{
+    font-family: 'Times New Roman', Times, serif;
+}
+.create_order_input{
+    display: flex;
+    justify-content: center;
+}
+.create_order_input input{
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+}
+.create_order_btn{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: left;
+    align-items: flex-start;
+    /* padding: 15px; */
+    margin-bottom: 10px;
+    
+}
+.order_btn{
+    display: flex;
+    width: 12vw;
+    justify-content: center;
+    align-items: center;
+    height: 6vh;
+    border-radius: 5px;
+    /* border:solid black 2px; */
+    cursor: pointer;
+}
+.order_btn_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.order_btn_text p{
+font-family: 'Times New Roman', Times, serif;
+font-size: larger;
+}
+.create_order_p2{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: 100%;
+    justify-content: center;
+    /* align-items: center; */
+    /* background-color: brown; */
+    
+}
+.tracker_bd{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    background-color: blanchedalmond;
+    border-radius: 10px;
+    padding: 10px;
+}
+.create_order_track_title{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+   
+}
+.tracker_h2{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+}
+.tracker_h2 h2{
+    font-family: 'Times New Roman', Times, serif;
+}
+.create_order_track{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+     
+}
+.create_order_text{
+    display: flex;
+    width:80%;
+    height: 8vh;
+    justify-content: center;
+    align-items: center;
+     background-color: yellowgreen;
+     border-radius: 5px;
+     border: solid black 2px;
+
+}
+.create_order_p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.create_order_p p{
+    font-family: 'Times New Roman', Times, serif;
+}

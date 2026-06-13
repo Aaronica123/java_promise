@@ -10,6 +10,7 @@ import Payload from './security/role.jsx';
 import Register_form from './dashboards/register_form.jsx';
 import View_orders from './orders/view_orders.jsx';
 import New_order from './orders/new_order.jsx';
+import Create_order from './orders/create_order.jsx';
 globalThis.p1=true;
 globalThis.p2=false;
 globalThis.count=-1;
@@ -28,8 +29,9 @@ function App() {
     {/* <Login/> */}
     {/* <Register_form/> */}
     {/* <View_orders/> */}
-    <New_order/>
-    {/* <Router>
+    {/* <New_order/> */}
+    {/* <Create_order/> */}
+    <Router>
       <Routes>
         <Route path="/" element={<Login/>}/>
         <Route path="/login" element={<Login/>}/> 
@@ -40,9 +42,10 @@ function App() {
           </Payload>
         }/>
         <Route path="/register"element={<Register_form/>}/>
-        
+        <Route path="/create_order" element={<Create_order/>}/>
+        <Route path="/view_order" element={<New_order/>}/>
       </Routes>
-    </Router> */}
+    </Router>
     </>
   )
 }
