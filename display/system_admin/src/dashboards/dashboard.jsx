@@ -3,13 +3,14 @@ import notification from "../images/others/notifications_logo.png";
 import profile from "../images/others/profile_logo.png";
 import Sidebar from "../sidebar/sidebar";
 import "./dashboard.css";
+import New_sidebar from "../sidebar/new_sidebar";
 function Dash_2(){
 
     return(
     <>
     <div className="dashboard_design">
     <div className="dashboard_side">
-        <Sidebar/>
+        <New_sidebar/>
 
     </div>
     <div className="dashboard_1">

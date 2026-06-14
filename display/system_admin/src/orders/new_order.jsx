@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./new_order.css";
 import Sidebar from "../sidebar/sidebar";
+import New_sidebar from "../sidebar/new_sidebar";
 
 function New_order() {
     const [hold, setHold] = useState([]);
@@ -87,7 +88,7 @@ function New_order() {
         <>
         <div className="new_ord_design">
             <div className="new_ord_dash">
-                <Sidebar/>
+                <New_sidebar/>
             </div>
             <div className="new_ord_body">
                 <div className="new_ord_head">
