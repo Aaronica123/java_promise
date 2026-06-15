@@ -17,6 +17,7 @@
     min-height: auto;
     background-color: #D9D9D9;
     border-radius: 15px;
+    border: solid 2px black;
 }
 
 .log_image{
@@ -91,6 +92,7 @@
     min-width: 15vw;
     border-radius: 15px;
     cursor: pointer;
+    height: 8vh;
 }
 .log_p2p{
     display: flex;

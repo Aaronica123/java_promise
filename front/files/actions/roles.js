@@ -8,7 +8,8 @@ export default function check(li,req){
     console.log(req.session.user);
         if(!req.session.user){
             //res.json({"message":"session not created yet"});
-            console.log("d1")
+            console.log("d1");
+            console.log(req.session.user);
             return state;
         }
         const ty=req.session.user.role;

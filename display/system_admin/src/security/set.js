@@ -1,6 +1,7 @@
 class set_session{
     static check(bd){
     if(bd.state){
+        // sessionStorage.setItem("user_id",bd.user_id);
         sessionStorage.setItem("full_name",bd.full_name);
         sessionStorage.setItem("role",bd.role)
         sessionStorage.setItem("auth",true);  
@@ -41,6 +42,10 @@ class set_session{
         sessionStorage.removeItem("auth");
         // sessionStorage.clear();
     }
+    // static direct(){
+    //     const dr=this.getrole();
+    //     if(dr.role=="Investor")
+    // }
 
 }
 

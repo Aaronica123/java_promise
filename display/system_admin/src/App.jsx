@@ -45,15 +45,32 @@ function App() {
         <Route path="/login" element={<Login/>}/> 
          <Route path="/logout" element={<Logout/>}/> 
         <Route path='/dashboard' element={
-          <Payload>
+          <Payload rl="Investor">
           <Dash_1/>
           </Payload>
         }/>
         <Route path="/register"element={<Register_form/>}/>
-        <Route path="/create_order" element={<Create_order/>}/>
-        <Route path="/view_order" element={<New_order/>}/>
-        <Route path="/dash_2" element={<Dash_2/>}/>
-        <Route path="/dash_3" element={<Dash_3/>}/>
+        <Route path="/create_order" element={
+          <Payload rl="Vendor">
+          <Create_order/>
+          </Payload>}/>
+        {/* <Route path="/view_order" element={<New_order/>}/> */}
+        <Route path="/dash_2" element={
+          <Payload rl="Vendor">
+            <Dash_2/>
+          </Payload>
+          }/>
+        
+        <Route path="/dash_3" element={
+          <Payload rl="Investor">
+            <Dash_3/>
+          </Payload>
+        }/>
+        <Route path="/view_order" element={
+          <Payload rl="Investor">
+            <New_order/>
+          </Payload>
+        }/>
       </Routes>
     </Router>
     </>

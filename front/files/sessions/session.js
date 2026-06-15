@@ -25,7 +25,9 @@ export default async function assign_sess(req,res,body){
                    return res.status(200).json({"message":"updated session",
                     "full_name":full_name,
                     "email":email,
-                    "state":true
+                    "state":true,
+                    "role":role
+                    
                    })
                 }
             })
@@ -64,7 +66,8 @@ export default async function assign_sess(req,res,body){
                 return res.status(200).json({"message":"Created new user",
                     "full_name":full_name,
                     "email":email,
-                    "state":true
+                    "state":true,
+                    "role":role
                 })
                     
                 }

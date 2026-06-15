@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import set_session from "./set.js";
 import { useNavigate } from "react-router-dom";
-function Payload({children}){
+function Payload({children,rl}){
+    console.log(rl);
     const[role,setrl]=useState(false);
     const[checkTrigger, setCheckTrigger] = useState(0); // Add this
     const nav=useNavigate();
@@ -30,11 +31,20 @@ function Payload({children}){
                 
                 if((resp.status===200||resp.status===201)){
                     console.log("Setting role to:", hold.state);
-                    setrl(hold.state);
+                    console.log(set_session.getrole());
+                    const f=set_session.getrole();
+                    console.log(f.role);
+                    if(f.role==rl){
+                        setrl(hold.state);
                     // Update session storage with latest data when user is logged in
                     if(hold.state) {
                         set_session.check(hold);
                     }
+                    }
+                    else{
+                        setrl(false);
+                    }
+                    
                 }
                 else{
                     setrl(false);
@@ -55,7 +65,10 @@ function Payload({children}){
 
     return (
         <>
-            {role?<div>{children}</div>: <div><p>This user isnt logged in</p></div>}
+            {role?<div>{children}</div>: <div>
+                <p>user is not logged in</p>
+            <button type="button" onClick={n}>Click to Return to Login</button>
+            </div>}
         </>
     )
 }

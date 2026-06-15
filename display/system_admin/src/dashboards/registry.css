@@ -10,7 +10,7 @@
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
-    background-color: rgb(7, 28, 83);
+    /* background-color: rgb(7, 28, 83); */
     /* min-height: 100vh; */
     /* height: fit-content; */
 }

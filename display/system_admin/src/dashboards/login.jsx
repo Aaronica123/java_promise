@@ -29,7 +29,7 @@ function Login(){
         
     }
     
-   
+   const [f,setf]=useState();
     const connect=async(e)=>{
         e.preventDefault();
         try
@@ -57,6 +57,14 @@ function Login(){
         
         if(bd.state){
             set_session.setrole(bd.state,bd);
+            console.log("values of bd are " + bd);
+            const f1=set_session.getrole();
+            console.log("user is an " +Object.values(bd));
+            if(bd.role=="Investor"){
+                setf(f1.role)
+            }else if(f1.role=="Vendor"){
+                setf(f1.role);
+            }
             console.log("done");
         }
         setnote(true);
@@ -73,6 +81,13 @@ function Login(){
             console.log(error.message);
         }
     }
+    // function dir(){
+    //     if(f=="Investor"){
+    //         nav1("/dash_2")
+    //     }else if(f=="Vendor"){
+    //         nav1("/dash_3")
+    //     }
+    // }
     
 useEffect(()=>{
             if(!set){
@@ -82,7 +97,7 @@ useEffect(()=>{
         },[set])
  useEffect(() => {
         if (note) {
-            const timer = setTimeout(() => {setnote(false),nav1("/dashboard")}, 2000);
+            const timer = setTimeout(() => {setnote(false),f=="Investor"?nav1("/dash_3"):nav1("/dash_2")}, 2000);
             //set timeout takes the function and the timeout so after that timeout it 
             return () => clearTimeout(timer);
         }

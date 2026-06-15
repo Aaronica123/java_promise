@@ -6,9 +6,14 @@ import dashboard from "../images/dashboard/dashboard.png";
 import { useEffect, useState } from "react";
 import {useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import Logout from "../notifications/logout";
 function New_sidebar(){
     const [btn1,setbtn1]=useState(null);
     const [btn2,setbtn2]=useState(null);
+    const [log,setlog]=useState(false);
+    function tr(){
+        setlog(!log);
+    }
      const nav=useNavigate();
     function b1(){
         setbtn1(true);
@@ -33,7 +38,12 @@ function New_sidebar(){
     
 return (
     <>
+   
     <div className="new_side_design">
+        <div className={log?"act":""}>
+            {log?<Logout/>:""}
+        </div>
+         
         <div className="new_side_body">
             <div className="new_side_logo">
                 <div className="logo_img">
@@ -66,7 +76,9 @@ return (
                 </div>
             </div>
             <div className="side_logout">
-                <div className="side_log_btn">
+                
+                <div className="side_log_btn" onClick={tr}>
+                    
                     <div className="logout_img">
                         <img src={logout}/>
                     </div>

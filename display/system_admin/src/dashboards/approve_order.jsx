@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import "./approve_order.css"
+// import set_session from "../security/set";
 function Approve_order(value){
     
     const [frm]=useState({
         item_id:"",order_id:"",amount:0,date:"",approval:""
     })
-    const [arr1,setarr]=useState([]);
+    // const [arr1,setarr]=useState([]);
     const [tr,settr]=useState(true);
     const update=async(e)=>{
         e.preventDefault();
@@ -13,7 +14,29 @@ function Approve_order(value){
             return (alert("All values should be entered"));
         }
         else{
-            const resp=await fetch("http://localhost:3001",{})
+            console.log("value is " +frm.order_id);
+            console.log("v is "+ frm.item_id)
+            const resp=await fetch("http://localhost:3001/approve_order",{
+                method:"POST",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                credentials:"include",
+                body:JSON.stringify({
+                    "order_id1":frm.item_id,
+                    "item_id1":frm.order_id
+                })
+            })
+            if(resp.status==200||resp.status==201){
+                alert("Approved Order");
+            }
+            else if(resp.status==409){
+                alert("Order conflict or already entered")
+            }
+            else if(resp.status==500){
+                alert("server error")
+            }
+            
         }
     }
     useEffect(()=>{
@@ -23,7 +46,7 @@ function Approve_order(value){
         const arr=Object.values(value.value);
         
         console.log("value is "+arr);
-        setarr(arr);
+        // setarr(arr);
         // setform(arr);
         arr.forEach((row_data,rowIndex)=>{
              
@@ -109,7 +132,7 @@ function Approve_order(value){
                 </div>
                 <div className="approve_part3">
                     {/* <div className="approve_btn_body"> */}
-                        <button className="approve_btn">
+                        <button className="approve_btn" type="button" onClick={update}>
                             <div className="approve_btn_text">
                                 <p>APPROVE</p>
                             </div>
