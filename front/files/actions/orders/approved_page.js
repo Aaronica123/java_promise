@@ -4,7 +4,7 @@ async function approved_page(req,res){
     try{
 const {index}=req.body;
 const total=await order_obj.countDocuments();
-const amnt=10;
+const amnt=5;
 var p=1;
 if(Number(index)){
     p=index;

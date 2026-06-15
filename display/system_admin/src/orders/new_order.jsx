@@ -11,18 +11,22 @@ function New_order() {
     )
     function b1(){
         setbtn({btn1:true,btn2:false,btn3:false});
+        setindex(1);
         data();
           setap(false);
+          
     }
     function b2(){
         setbtn({btn1:false,btn2:true,btn3:false});
+        setindex(1);
        approved();
          setap(false);
+         
         
     }
     function b3(){
         setbtn({btn1:false,btn2:false,btn3:true});
-        
+        setindex(1);
        pending();
     }
     const [ap,setap]=useState(false);
@@ -39,7 +43,22 @@ function New_order() {
     function get(){
         return row;
     }
-
+    const [index,setindex]=useState(1);
+    function next(){
+        if(index>=page){
+            setindex(page);
+        }else{
+        setindex(index+1);
+        }
+    }
+    function back(){
+        if(index==1){
+            setindex(1);
+        }else{
+            setindex(index-1);
+        }
+        
+    }
     const approved=async()=>{
         try{
             const resp=await fetch("http://localhost:3001/fetch_approved",{
@@ -48,7 +67,7 @@ function New_order() {
                     "Content-Type":"application/json"
                 },
                 body:JSON.stringify({
-                    "index":0
+                    "index":index
                 })
             })
             const da=await resp.json();
@@ -67,7 +86,7 @@ function New_order() {
                     "Content-Type":"application/json"
                 },
                 body:JSON.stringify({
-                    "index":0
+                    "index":index
                 })
             })
             const da=await ft.json();
@@ -78,7 +97,7 @@ function New_order() {
             console.log(error.message);
         }
     }
-    
+    const [page,setpage]=useState(null);
     const data = async () => {
         const ft = await fetch("http://localhost:3001/page", {
             method: "POST",
@@ -87,10 +106,11 @@ function New_order() {
             },
             credentials: "include",
             body: JSON.stringify({
-                "index": 0
+                "index": index
             })
         });
         const da = await ft.json();
+        setpage(da.pages);
         const rows = da.data.map((row) => Object.values(row));
         setHold(rows);
     };
@@ -102,7 +122,26 @@ function New_order() {
             console.log(error.message);
         }
     }, []);
+    useEffect(()=>{
+        if(index>0){
 
+        
+        try{
+            if(btn.btn1){
+               data();
+            }
+            else if(btn.btn2){
+                approved();
+            }
+            else if(btn.btn3){
+                pending();
+            }
+        }
+        catch(error){
+console.log(error.message);
+        }
+    }
+    },[index])
     return (
         <>
         <div className="new_ord_design">
@@ -138,7 +177,7 @@ function New_order() {
                     <div className="new_ord3">
                         <div className="page_count">
                             <div className="page_design">
-                                <p>Page 1 of 200</p>
+                                <p>Page {index} of {page}</p>
                             </div>
                         </div>
                         <div className="ord_table">
@@ -173,12 +212,12 @@ function New_order() {
                             </div>
                         </div>
                         <div className="ord_btn">
-                            <div className="ord_btn1">
-                                <div className="btn_txt"><p>Next</p></div>
-                            </div>
-                            <div className="ord_btn2">
+                            <button className="ord_btn1" onClick={back}>
                                 <div className="btn_txt"><p>Previous</p></div>
-                            </div>
+                            </button>
+                            <button className="ord_btn2" onClick={next}>
+                                <div className="btn_txt"><p>Next</p></div>
+                            </button>
                         </div>
                     </div>
                     </div>

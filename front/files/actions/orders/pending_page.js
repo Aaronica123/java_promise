@@ -8,7 +8,7 @@ async function pending_page(req,res){
             p=index;
         }
         const totaldata=await order_obj.countDocuments();
-        const amnt=10;
+        const amnt=5;
         const offset=(p-1)*amnt;
         const data=await order_obj.find({approval:false},{_id:0,__v:0}).skip(offset).limit(amnt);
         const pages=Math.ceil(totaldata/amnt);

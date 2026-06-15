@@ -236,13 +236,25 @@ align-items: center;
 width: 8vw;
 height: fit-content;
 background-color: bisque;
+border: none;
+/* border: solid black 2px; */
+}
+.ord_btn1:hover{
+    display: flex;
+justify-content: center;
+align-items: center;
+width: 8vw;
+height: fit-content;
+background-color: bisque;
+border: none;
+border: solid black 2px;
 }
 .ord_btn2{
 display: flex;
 justify-content: center;
 align-items: center;
 width: 8vw;
-border: solid black 2px;
+
 height: fit-content;
 background-color: rgb(255, 255, 255);
 }
