@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import "./new_order.css";
 import Sidebar from "../sidebar/sidebar";
 import New_sidebar from "../sidebar/new_sidebar";
-
+import New_sidebar12 from "../sidebar/new_sidebar2";
+import Approve_order from "../dashboards/approve_order";
 function New_order() {
     const [hold, setHold] = useState([]);
     const [btn,setbtn]=useState(
@@ -11,16 +12,34 @@ function New_order() {
     function b1(){
         setbtn({btn1:true,btn2:false,btn3:false});
         data();
+          setap(false);
     }
     function b2(){
         setbtn({btn1:false,btn2:true,btn3:false});
        approved();
+         setap(false);
         
     }
     function b3(){
         setbtn({btn1:false,btn2:false,btn3:true});
+        
        pending();
     }
+    const [ap,setap]=useState(false);
+    const [row,setrow]=useState();
+    function cl(index,row){
+        console.log(index);
+        console.log(row);
+        setap(true);
+        setrow(row);
+        setind(index);
+        
+    }
+    const[in1,setind]=useState()
+    function get(){
+        return row;
+    }
+
     const approved=async()=>{
         try{
             const resp=await fetch("http://localhost:3001/fetch_approved",{
@@ -88,7 +107,7 @@ function New_order() {
         <>
         <div className="new_ord_design">
             <div className="new_ord_dash">
-                <New_sidebar/>
+                <New_sidebar12/>
             </div>
             <div className="new_ord_body">
                 <div className="new_ord_head">
@@ -133,14 +152,18 @@ function New_order() {
                             <div className="new_ord_data">
                                 {hold.map((row, rowIndex) => (
                                     <div className="ju">
-                                    <div className="ord_1w" key={rowIndex}>
+                                    <div className="ord_1w" key={rowIndex} onClick={btn.btn3?()=>cl(rowIndex,row):""}>
+                                        {in1==rowIndex?<div>
+                                                    {ap?<Approve_order value={get()}/>:""}
+                                        </div>:""}
                                         {row.map((col, colIndex) => (
-                                            
+                                           
                                             <div
                                                 className={colIndex === 4 ? "ord_data1" : "ord_data"}
                                                 key={colIndex}
                                             >
                                                 <p>{String(col)}</p>
+                                               
                                             </div>
                                             
                                         ))}

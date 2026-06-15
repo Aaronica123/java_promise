@@ -266,3 +266,16 @@ background-color: rgb(255, 255, 255);
 
     
 }
+.ord_1w:hover{
+ display: flex;
+    flex-direction: row;
+    /* gap:10px; */
+    
+     background-color: whitesmoke;
+     border-radius: 10px; 
+     cursor: pointer;  
+     transform: translateY(-8px);
+  /* box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.2),
+              0 8px 10px -6px rgba(0, 0, 0, 0.1); */
+
+}

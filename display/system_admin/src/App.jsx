@@ -13,6 +13,8 @@ import New_order from './orders/new_order.jsx';
 import Create_order from './orders/create_order.jsx';
 import Dash_2 from './dashboards/dashboard.jsx';
 import New_sidebar from './sidebar/new_sidebar.jsx';
+import Approve_order from './dashboards/approve_order.jsx';
+import Dash_3 from './dashboards/investor_dashboard.jsx';
 globalThis.p1=true;
 globalThis.p2=false;
 globalThis.count=-1;
@@ -35,8 +37,10 @@ function App() {
     {/* <Create_order/> */}
     {/* <Dash_2/> */}
     {/* <New_sidebar/> */}
+    
     <Router>
       <Routes>
+        
         <Route path="/" element={<Login/>}/>
         <Route path="/login" element={<Login/>}/> 
          <Route path="/logout" element={<Logout/>}/> 
@@ -49,6 +53,7 @@ function App() {
         <Route path="/create_order" element={<Create_order/>}/>
         <Route path="/view_order" element={<New_order/>}/>
         <Route path="/dash_2" element={<Dash_2/>}/>
+        <Route path="/dash_3" element={<Dash_3/>}/>
       </Routes>
     </Router>
     </>

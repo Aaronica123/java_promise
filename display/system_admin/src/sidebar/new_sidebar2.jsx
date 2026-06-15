@@ -6,26 +6,26 @@ import dashboard from "../images/dashboard/dashboard.png";
 import { useEffect, useState } from "react";
 import {useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-function New_sidebar(){
+function New_sidebar12(){
     const [btn1,setbtn1]=useState(null);
     const [btn2,setbtn2]=useState(null);
      const nav=useNavigate();
     function b1(){
         setbtn1(true);
         setbtn2(false);
-        nav("/dash_2");
+        nav("/dash_3");
     }
     function b2(){
         setbtn2(true);
         setbtn1(false);
-        nav("/create_order");
+        nav("/view_order");
     }
     const location = useLocation();
      useEffect(() => {
-        if (location.pathname === "/dash_2") {
+        if (location.pathname === "/dash_3") {
             setbtn1(true);
             setbtn2(false);
-        } else if (location.pathname === "/create_order") {
+        } else if (location.pathname === "/view_order") {
             setbtn1(false);
             setbtn2(true);
         }
@@ -60,7 +60,7 @@ return (
                             <img src={form_register}/>
                         </div>
                         <div className="side_btn_text">
-                            <p>Order Items</p>
+                            <p>View Items</p>
                         </div>
                     </div>
                 </div>
@@ -81,4 +81,4 @@ return (
     </>
 )
 }
-export default New_sidebar;
+export default New_sidebar12;
